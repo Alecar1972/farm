@@ -86,6 +86,8 @@ table {
     --white:#ffffff;
 }
 /* --------------------GLOBAL STYLES (mobile first/small) --------------------*/
+@media (min-width: 428px){
+    
 h1 {
     font-size: 2.5em;
     padding: 10px 0;
@@ -125,6 +127,7 @@ ul li {
     padding: 10px;
     border: 2px solid var(--white);
     border-radius: 5px;
+    text-align: center;
 }
 a {
     text-decoration: none;
@@ -134,7 +137,7 @@ a {
     background-color: var(--orange);
     border: 2px solid var(--white);
     border-radius: 5px;
-    padding: 3px;
+    padding: 10px 3px;
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -143,6 +146,180 @@ main{
     max-width: 100%;
     padding: 1em;
 }
+p {
+    line-height: 1.75em;
+    margin-bottom: 20px;
+}
+.fruit-grid {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    row-gap: 15px;
+    margin-bottom: 30px;
+}
+.veg-grid {
+    display: grid;
+    grid-template-rows: auto;
+    justify-content: center;
+    row-gap: 15px;
+    margin-bottom: 30px;
+}
+figure {
+    position: relative;
+}
+figure figcaption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    transform: translate(-50%, -50%);
+
+}
+footer {
+    background-color: var(--green);
+}
+.operating-hours, .contact-info{
+    max-width: 100%;
+    color: var(--white);
+    text-align: center;
+    padding: 20px 0 15px 0;
+}
+.operating-hours h2, .contact-info h2{
+    padding-bottom: 15px;
+}
+/* .operating-hours dl {
+    width: 50%;
+    margin: 0 auto;
+} */
+/* .operating-hours dt, .operating-hours dd {
+    display: inline-block;
+} */
+.copyright {
+    display: block;
+    color: var(--green);
+    background-color: var(--white);
+    text-align: center;
+    padding: 5px;
+}
+}
 /*-------------------- MEDIA QUERY (medium) --------------------------------*/
+@media (min-width: 834px) {
+ header {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ } 
+ .links{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    margin: 10px auto;
+    justify-items: center;
+}
+.fruit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 15px;
+    margin-bottom: 30px auto;
+}
+.fruit-grid h3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+.fruit-grid figure {
+    justify-self: center;
+}
+.veg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    row-gap: 15px;
+    margin-bottom: 30px auto;
+}
+.veg-grid h3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+.veg-grid figure {
+    justify-self: center;
+}
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.copyright {
+    grid-column: 1 / -1;
+}
+.contact-info {
+    align-self: center;
+}
+}
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media (min-width: 1280px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: flex-start;
+        padding: 15px;
+    }
+    .links {
+        display: flex;
+        position: absolute;
+        top: 45px;
+        right: 45px;
+    }
+    .fruit-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        row-gap: 15px;
+        margin-bottom: 30px auto;
+    }
+    .fruit-grid h3 {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+    .fruit-grid figure {
+        justify-self: center;
+    }
+    .veg-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        row-gap: 15px;
+        margin-bottom: 30px auto;
+    }
+    .veg-grid h3 {
+        grid-column: 1 / -1;
+        justify-self: center;
+    }
+    .veg-grid figure {
+        justify-self: center;
+    }
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+    }
+    .copyright {
+        grid-column: 1 / -1;
+    }
+    .contact-info, .operating-hours {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-self: start;
+
+    }
+}
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media (min-width: 1440px) {
+    .fruit-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .veg-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
